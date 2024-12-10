@@ -1,0 +1,35 @@
+{
+  "name": "client",
+  "version": "0.0.2",
+  "private": true,
+  "scripts": {
+    "precommit": "npm run lint && npm run build",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@krmx/client-react": "^0.6.3",
+    "@krmx/state": "^0.0.4",
+    "@krmx/state-client-react": "^0.0.4",
+    "board": "file:../board",
+    "framer-motion": "^11.11.9",
+    "next": "14.2.10",
+    "next-themes": "^0.3.0",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4",
+    "eslint-plugin-tailwindcss": "3.13.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

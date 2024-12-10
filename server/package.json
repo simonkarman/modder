@@ -1,0 +1,36 @@
+{
+  "name": "server",
+  "version": "0.0.2",
+  "main": "src/server.ts",
+  "private": true,
+  "scripts": {
+    "precommit": "npm run lint && npm test",
+    "dev": "nodemon --delay 1 --watch src --watch ../board/dist/src src/server.ts",
+    "test": "jest --coverage --verbose",
+    "lint": "eslint . --ext .ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/jest": "^29.5.8",
+    "@types/node": "^20.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "eslint": "^8.53.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jest": "^27.6.0",
+    "nodemon": "^3.0.1",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@krmx/server": "^0.6.7",
+    "@krmx/state": "^0.0.4",
+    "@krmx/state-server": "^0.0.4",
+    "chalk": "^4.1.2",
+    "board": "file:../board"
+  }
+}
