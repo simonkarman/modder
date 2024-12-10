@@ -1,8 +1,7 @@
-import { alphabetModel, cardGameModel } from '../src';
+import { gameModel } from '../src';
 
 describe('Models', () => {
-  it('should export card game and alphabet models', () => {
-    expect(alphabetModel).toBeTruthy();
-    expect(cardGameModel).toBeTruthy();
+  it('should export game model', () => {
+    expect(gameModel).toBeTruthy();
   });
 });

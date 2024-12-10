@@ -1,7 +1,7 @@
 {
-  "name": "krmx-starter",
-  "version": "0.0.2",
-  "description": "A starter project for an application using [Krmx](https://simonkarman.github.io/krmx) and React.",
+  "name": "modder",
+  "version": "0.0.1",
+  "description": "A moddable game about mud using [Krmx](https://simonkarman.github.io/krmx) and React.",
   "scripts": {
     "postinstall": "npm run install-all",
     "install-all": "npm --prefix board install && npm --prefix server install && npm --prefix client install",

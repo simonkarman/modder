@@ -55,7 +55,7 @@ export function LinkUI() {
               repeatDelay: 1.5,
             },
           }}>
-          Krmx Starter
+          Modder
         </motion.p>
       </div>
       <motion.div
