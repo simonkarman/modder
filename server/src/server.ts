@@ -2,7 +2,7 @@ import { createServer, Props } from '@krmx/server';
 import { chat } from './chat';
 import { cli } from './cli';
 import { enableUnlinkedKicker } from './unlinked-kicker';
-import { gameModel } from 'board';
+import { gameModel, placeTree, SERVER } from 'board';
 import { registerProjection } from '@krmx/state-server';
 
 // Setup server
@@ -16,10 +16,17 @@ cli(server);
 chat(server);
 
 // Game
-registerProjection(server, 'game', gameModel);
+const game = registerProjection(server, 'game', gameModel);
+const internalId = setInterval(() => {
+  const projection = game.projection(SERVER);
+  if (projection.turn === projection.order.length - 1) {
+    game.dispatch(SERVER, placeTree());
+  }
+}, 500);
 
 // Start server
 server.listen(8084);
 export default async () => {
   await server.close();
+  clearInterval(internalId);
 };
