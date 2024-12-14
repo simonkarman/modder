@@ -2,7 +2,7 @@ import { createServer, Props } from '@krmx/server';
 import { chat } from './chat';
 import { cli } from './cli';
 import { enableUnlinkedKicker } from './unlinked-kicker';
-import { gameModel, placeTree, SERVER } from 'board';
+import { gameModel, simulateGod, God } from 'board';
 import { registerProjection } from '@krmx/state-server';
 
 // Setup server
@@ -18,10 +18,11 @@ chat(server);
 // Game
 const game = registerProjection(server, 'game', gameModel);
 const internalId = setInterval(() => {
-  const projection = game.projection(SERVER);
-  if (projection.turn === projection.order.length - 1) {
-    game.dispatch(SERVER, placeTree());
+  const projection = game.projection(God);
+  if (projection.order[projection.turn] !== God) {
+    return;
   }
+  game.dispatch(God, simulateGod());
 }, 500);
 
 // Start server

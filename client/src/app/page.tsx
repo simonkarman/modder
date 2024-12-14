@@ -16,7 +16,6 @@ export default function Page() {
     <Chat/>
     <div className="space-y-0.5">
       <h1 className="text-lg font-bold">Welcome, {capitalize(username!)}!</h1>
-      <p>Modder is a moddable game about mud.</p>
     </div>
     <GameModel />
   </div>;
